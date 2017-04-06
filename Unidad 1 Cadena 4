@@ -4,37 +4,28 @@
 using namespace std;
 
 
-int palin(string cadena)
+bool palin(string cadena)
 {
-   string cadena1 =  string(cadena.rbegin(), cadena.rend());
+	string cadena1 = string(cadena.rbegin(), cadena.rend());
 
-
-   for(int i=0; i<cadena.size();i++)
-   {    cadena[i]=toupper(cadena[i]);
-
-        cadena1[i]=toupper(cadena1[i]);
-
-        if (cadena[i]!=cadena1[i])
-            return 0;
-        else
-            return 1;
-
-
-    }
+	if (cadena == cadena1)
+		return true;
+	else
+		return false;
 }
 
 int main()
 {
 
-string oracion;
-cout<< "Escribe tu oracion, te diremos si es palindroma: "<<"\n";
+	string oracion;
+	cout << "Escribe tu oracion, te diremos si es palindroma: " << "\n";
 
-getline(cin,oracion);
+	getline(cin, oracion);
 
-if (palin(oracion)==true)
-    cout<< "Tu oracion si es PALINDROMA!!";
-else
-    cout<< "Tu oracion no es cheverengue";
+	if (palin(oracion) == true)
+		cout << "Tu oracion si es PALINDROMA!!";
+	else
+		cout << "Tu oracion no es cheverengue";
 
-
+	system("pause");
 }
